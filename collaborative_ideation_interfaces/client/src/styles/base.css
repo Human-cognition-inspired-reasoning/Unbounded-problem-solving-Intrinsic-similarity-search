@@ -1,0 +1,191 @@
+:root,
+:root[data-theme="light"] {
+  --page: #f5f3fb;
+  --surface: #ffffff;
+  --surface-subtle: #f8f7fc;
+  --surface-hover: #f0eef8;
+  --text: #262233;
+  --muted: #6f687d;
+  --faint: #9c95a9;
+  --border: #e4e0ed;
+  --primary: #6756d9;
+  --primary-hover: #5747c3;
+  --primary-soft: #eeebff;
+  --danger: #b42318;
+  --danger-soft: #fff0ee;
+  --sidebar: #f8f7fc;
+  --message-assistant: #f8f7fc;
+  --shadow: 0 18px 50px rgba(58, 43, 103, 0.12);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #14121a;
+  --surface: #1c1924;
+  --surface-subtle: #24202e;
+  --surface-hover: #2e293b;
+  --text: #f0edf7;
+  --muted: #afa9bc;
+  --faint: #81798f;
+  --border: #3a3447;
+  --primary: #a99cf5;
+  --primary-hover: #bbb1ff;
+  --primary-soft: #302a4a;
+  --danger: #ff8b82;
+  --danger-soft: #3b2324;
+  --sidebar: #181620;
+  --message-assistant: #24202e;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+body {
+  color: var(--text);
+  background: var(--page);
+  font-size: 16px;
+}
+
+.boot-screen,
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 16% 12%, color-mix(in srgb, var(--primary) 14%, transparent), transparent 30%),
+    radial-gradient(circle at 86% 88%, rgba(241, 178, 112, 0.10), transparent 28%),
+    var(--page);
+}
+
+.boot-screen {
+  align-content: center;
+  color: var(--muted);
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto 12px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.login-card {
+  width: min(100%, 470px);
+  padding: 40px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.eyebrow {
+  margin: 0 0 5px;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.login-card h1 {
+  margin: 0;
+  font-size: 33px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  word-break: keep-all;
+}
+
+.login-description {
+  margin: 10px 0 28px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.login-form {
+  display: grid;
+  gap: 16px;
+}
+
+.login-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  color: var(--text);
+  background: var(--surface-subtle);
+}
+
+.login-form input:focus {
+  border-color: var(--primary);
+}
+
+.primary-button,
+.new-chat-button {
+  border: 1px solid var(--primary);
+  color: var(--surface);
+  background: var(--primary);
+  font-weight: 700;
+}
+
+.primary-button:hover,
+.new-chat-button:hover {
+  background: var(--primary-hover);
+}
+
+.login-button {
+  margin-top: 4px;
+  padding: 13px 16px;
+  border-radius: 11px;
+}
+
+.form-error,
+.error-banner {
+  color: var(--danger);
+  background: var(--danger-soft);
+}
+
+.notice-banner {
+  color: var(--text);
+  background: var(--primary-soft);
+}
+
+.form-error {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 9px;
+  font-size: 14px;
+}
+
+.privacy-note {
+  margin: 22px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  color: var(--faint);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.contact-note {
+  margin: 6px 0 0;
+  color: var(--faint);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.contact-note a {
+  color: var(--muted);
+}
