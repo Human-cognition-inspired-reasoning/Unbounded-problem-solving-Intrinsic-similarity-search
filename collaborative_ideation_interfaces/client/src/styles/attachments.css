@@ -1,0 +1,15 @@
+/* Attachments share the composer width and remain readable on narrow screens. */
+.draft-attachments { display: grid; gap: 8px; padding: 12px 14px 0; max-height: 330px; overflow-y: auto; }
+.draft-attachment, .message-attachment { border: 1px solid var(--border); border-radius: 10px; background: var(--surface-subtle); padding: 10px; min-width: 0; }
+.attachment-heading { display: flex; gap: 9px; align-items: center; }
+.attachment-heading > div { flex: 1; min-width: 0; }
+.attachment-heading strong { display: block; overflow-wrap: anywhere; font-size: 13px; }
+.attachment-heading small, .message-attachment small { display: block; color: var(--muted); font-size: 11px; margin-top: 3px; }
+.attachment-heading img { width: 42px; height: 42px; object-fit: cover; border-radius: 6px; }
+.attachment-heading button { border: 0; background: none; color: var(--text); font-size: 21px; cursor: pointer; padding: 4px 9px; }
+.attachment-error, .attachment-progress { padding: 8px 14px 0; margin: 0; font-size: 12px; }
+.attachment-error { color: var(--danger); }
+.attachment-progress { color: var(--muted); }
+.message-attachments { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0 0 10px; }
+.message-attachment { max-width: 100%; text-align: left; }
+.message-attachment .attachment-name { font-size: 13px; overflow-wrap: anywhere; }
